@@ -10,36 +10,55 @@ import UIKit
 
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var naviBarView: UIView!
+    @IBOutlet weak var settingTable: UITableView!
 
+    var listSetting: [MCSetting]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 64)
         
-        naviBarView.addSubview(blurEffectView)
+        listSetting = MCSetting.makeDemoList()
+        
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 64)
+//        
+//        naviBarView.addSubview(blurEffectView)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return listSetting.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! SettingTableViewCell
+        cell.setSettingForCell(listSetting[indexPath.row])
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 50
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let detailVC = segue.destinationViewController as! DetailViewController
+        if let row = self.settingTable.indexPathForSelectedRow?.row {
+            detailVC.settingReceive = self.listSetting[row]
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        let detailVC = segue.destinationViewController as! DetailViewController
+//        detailVC.settingReceive = self.listSetting[sendIndex!]
+//        
+//    }
 
     /*
     // MARK: - Navigation

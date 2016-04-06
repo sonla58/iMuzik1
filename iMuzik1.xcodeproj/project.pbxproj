@@ -44,6 +44,8 @@
 		AC46D71D1CB56719002245C0 /* icon_rain@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC46D70A1CB56719002245C0 /* icon_rain@2x.png */; };
 		AC46D71E1CB56719002245C0 /* icon_nightSound@2x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC46D70B1CB56719002245C0 /* icon_nightSound@2x@2x.png */; };
 		AC46D71F1CB56719002245C0 /* nightSelected@2x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC46D70C1CB56719002245C0 /* nightSelected@2x@2x.png */; };
+		AC46D7231CB5842F002245C0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46D7221CB5842F002245C0 /* DetailViewController.swift */; };
+		AC46D7251CB58B79002245C0 /* MCSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46D7241CB58B79002245C0 /* MCSetting.swift */; };
 		ACAC74BD1CB3665400D98E74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC74BC1CB3665400D98E74 /* AppDelegate.swift */; };
 		ACAC74C21CB3665400D98E74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAC74C01CB3665400D98E74 /* Main.storyboard */; };
 		ACAC74C41CB3665400D98E74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAC74C31CB3665400D98E74 /* Assets.xcassets */; };
@@ -91,6 +93,8 @@
 		AC46D70A1CB56719002245C0 /* icon_rain@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_rain@2x.png"; path = "Image/icon_rain@2x.png"; sourceTree = "<group>"; };
 		AC46D70B1CB56719002245C0 /* icon_nightSound@2x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_nightSound@2x@2x.png"; path = "Image/icon_nightSound@2x@2x.png"; sourceTree = "<group>"; };
 		AC46D70C1CB56719002245C0 /* nightSelected@2x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nightSelected@2x@2x.png"; path = "Image/nightSelected@2x@2x.png"; sourceTree = "<group>"; };
+		AC46D7221CB5842F002245C0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AC46D7241CB58B79002245C0 /* MCSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCSetting.swift; sourceTree = "<group>"; };
 		ACAC74B91CB3665400D98E74 /* iMuzik1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMuzik1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAC74BC1CB3665400D98E74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACAC74C11CB3665400D98E74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				AC166B031CB4070300E45EAD /* MCSound.swift */,
+				AC46D7241CB58B79002245C0 /* MCSetting.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			children = (
 				ACAC74D01CB3722000D98E74 /* SettingViewController.swift */,
 				AC46D6D81CB5601E002245C0 /* SettingTableViewCell.swift */,
+				AC46D7221CB5842F002245C0 /* DetailViewController.swift */,
 			);
 			name = SettingViewController;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 				TargetAttributes = {
 					ACAC74B81CB3665400D98E74 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = TK6T4KEN3N;
 					};
 				};
 			};
@@ -335,11 +342,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC46D7251CB58B79002245C0 /* MCSetting.swift in Sources */,
 				AC46D6D91CB5601E002245C0 /* SettingTableViewCell.swift in Sources */,
 				ACAC74D31CB3931A00D98E74 /* SoundCollectionViewCell.swift in Sources */,
 				ACAC74CF1CB3720E00D98E74 /* SoundViewController.swift in Sources */,
 				ACAC74BD1CB3665400D98E74 /* AppDelegate.swift in Sources */,
 				ACAC74D11CB3722000D98E74 /* SettingViewController.swift in Sources */,
+				AC46D7231CB5842F002245C0 /* DetailViewController.swift in Sources */,
 				AC166B041CB4070300E45EAD /* MCSound.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,10 +464,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iMuzik1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.VietIS.iMuzik1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -466,10 +479,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iMuzik1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.VietIS.iMuzik1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

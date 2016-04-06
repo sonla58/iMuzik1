@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().backgroundColor = UIColor.clearColor()
         
         UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().backgroundColor = UIColor.clearColor()
         return true
     }
