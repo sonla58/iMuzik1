@@ -25,9 +25,17 @@ class SoundViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         //Add blur effect in navi bar
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 64)
+        //blurEffectView.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 64)
         
         naviBarView.addSubview(blurEffectView)
+        blurEffectView.translatesAutoresizingMaskIntoConstraints = false
+        let leading = NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: naviBarView, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 0)
+        let top = NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: naviBarView, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0)
+        let trailing = NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: naviBarView, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: 0)
+        let height = NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant: 64)
+        
+        naviBarView.addConstraints([leading,top,trailing])
+        blurEffectView.addConstraint(height)
         
         demoSoundList = MCSound.makeDemoList()
     }
@@ -49,7 +57,6 @@ class SoundViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //xoa khi co model
-        print(demoSoundList.count)
         return demoSoundList.count
     }
     
@@ -59,10 +66,14 @@ class SoundViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         cell.setSoundForCell(sound)
         if sound.isSelected == true {
             sound.playSound()
+            cell.btnToggleSound.selected = true
+            cell.btnToggleSound.layer.shadowOpacity = 0.3
             cell.btnToggleSound.layer.opacity = (sound.audioVulume! / 2) + 0.5
             cell.volumeSlider.hidden = false
         } else {
             sound.stopSound()
+            cell.btnToggleSound.selected = false
+            cell.btnToggleSound.layer.shadowOpacity = 0
             cell.btnToggleSound.layer.opacity = 0.4
             cell.volumeSlider.hidden = true
         }

@@ -35,6 +35,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! SettingTableViewCell
         cell.setSettingForCell(listSetting[indexPath.row])
+        cell.backgroundColor = cell.contentView.backgroundColor
         return cell
     }
     

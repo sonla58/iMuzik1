@@ -20,6 +20,7 @@
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="bg_palette" translatesAutoresizingMaskIntoConstraints="NO" id="ryG-93-Mig">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ryG-93-Mig" secondAttribute="height" multiplier="40:71" id="Aq3-u3-OiX"/>
                                 </constraints>
@@ -34,12 +35,15 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S6N-Ut-ARj">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="50" id="WIw-gl-WOx" customClass="SettingTableViewCell" customModule="iMuzik1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WIw-gl-WOx" id="m8s-UG-Yxk">
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="WIw-gl-WOx" id="m8s-UG-Yxk">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -61,6 +65,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="PEz-ZB-IdF" secondAttribute="bottom" id="Ird-eG-pju"/>
                                                 <constraint firstAttribute="trailing" secondItem="PEz-ZB-IdF" secondAttribute="trailing" id="Jsl-Sg-h6O"/>
@@ -82,7 +87,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098039215686274" green="0.19215686274509802" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ryG-93-Mig" firstAttribute="top" secondItem="CIR-0r-eaN" secondAttribute="top" id="70G-SZ-EqK"/>
                             <constraint firstItem="ryG-93-Mig" firstAttribute="leading" secondItem="CIR-0r-eaN" secondAttribute="leading" id="DqO-TB-dhr"/>
@@ -107,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7C6-4v-wa0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="273" y="377"/>
+            <point key="canvasLocation" x="291" y="335"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="1B3-aI-7R3">
@@ -183,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQK-vD-Ojy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="377"/>
+            <point key="canvasLocation" x="658" y="335"/>
         </scene>
         <!--Mix-->
         <scene sceneID="uVH-yQ-uqW">
@@ -199,6 +204,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_palette2" translatesAutoresizingMaskIntoConstraints="NO" id="TJy-WJ-ACN">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TJy-WJ-ACN" secondAttribute="height" multiplier="40:71" id="WFQ-9F-AQY"/>
+                                </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GyJ-CZ-oHV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -206,13 +214,13 @@
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="64" maxX="0.0" maxY="44"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xks-2l-NDa">
                                     <size key="itemSize" width="95" height="140"/>
-                                    <size key="headerReferenceSize" width="320" height="69"/>
+                                    <size key="headerReferenceSize" width="320" height="80"/>
                                     <size key="footerReferenceSize" width="320" height="50"/>
-                                    <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="25" minY="5" maxX="25" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SoundCell" id="iuQ-c7-g65" customClass="SoundCollectionViewCell" customModule="iMuzik1" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="69" width="95" height="140"/>
+                                        <rect key="frame" x="25" y="85" width="95" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="95" height="140"/>
@@ -253,11 +261,11 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderCell" id="k7L-fD-4Is">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="footerCell" id="dxG-Lq-Pdr">
-                                    <rect key="frame" x="0.0" y="209" width="320" height="50"/>
+                                    <rect key="frame" x="0.0" y="225" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                                 <connections>
@@ -305,6 +313,7 @@
                         <constraints>
                             <constraint firstItem="GyJ-CZ-oHV" firstAttribute="top" secondItem="X2I-Gp-NgZ" secondAttribute="top" id="2Aq-e3-joO"/>
                             <constraint firstItem="GyJ-CZ-oHV" firstAttribute="leading" secondItem="X2I-Gp-NgZ" secondAttribute="leading" id="3nF-gQ-3eG"/>
+                            <constraint firstItem="LOa-bY-lRG" firstAttribute="top" secondItem="X2I-Gp-NgZ" secondAttribute="top" constant="20" id="89B-Oh-uda"/>
                             <constraint firstItem="LOa-bY-lRG" firstAttribute="leading" secondItem="X2I-Gp-NgZ" secondAttribute="leading" id="H0h-DV-MmB"/>
                             <constraint firstAttribute="trailing" secondItem="GyJ-CZ-oHV" secondAttribute="trailing" id="UHh-UV-WRp"/>
                             <constraint firstAttribute="trailing" secondItem="LOa-bY-lRG" secondAttribute="trailing" id="UyR-UG-dOo"/>
@@ -318,6 +327,12 @@
                             <constraint firstItem="TJy-WJ-ACN" firstAttribute="top" secondItem="X2I-Gp-NgZ" secondAttribute="top" id="lBt-c1-vOp"/>
                             <constraint firstItem="Len-NW-DMs" firstAttribute="leading" secondItem="X2I-Gp-NgZ" secondAttribute="leading" id="p2c-8u-GzY"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="h1e-cu-HAN"/>
+                                <exclude reference="exA-dR-ubc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mix" image="Musical Notes-50" id="ZXK-VN-FLP"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -330,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8o-VT-RHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="-259"/>
+            <point key="canvasLocation" x="-84" y="-313"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Web-ef-5Y2">
@@ -375,7 +390,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odr-SH-Lkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="377"/>
+            <point key="canvasLocation" x="-84" y="335"/>
         </scene>
     </scenes>
     <resources>

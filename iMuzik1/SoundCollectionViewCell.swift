@@ -16,7 +16,6 @@ class SoundCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         btnToggleSound.layer.opacity = 0.5
         volumeSlider.hidden = true
         volumeSlider.setThumbImage(UIImage(named: "Knob" ), forState: UIControlState.Normal)
@@ -30,6 +29,7 @@ class SoundCollectionViewCell: UICollectionViewCell {
         btnToggleSound.setImage(sound.image, forState: UIControlState.Normal)
         btnToggleSound.setImage(sound.image, forState: UIControlState.Selected)
     }
+    
     
     @IBAction func changeVolume() {
         soundForCell!.changeVolume(volumeSlider.value / volumeSlider.maximumValue)

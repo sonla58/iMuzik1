@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UITabBar.appearance().translucent = true
-        UITabBar.appearance().backgroundColor = UIColor.clearColor()
+        UITabBar.appearance().shadowImage = UIImage()
         
         UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
         UINavigationBar.appearance().shadowImage = UIImage()
